@@ -22,20 +22,11 @@ function digAndMove(n)
     end
 end
 
-function square(n)
-    while turtle.detect() do
-        digAndMove(n)
-    end
-    turtle.turnLeft()
-end
-
 io.write("length: ")
 a = tonumber(io.read())
 io.write("girth: ")
 b = tonumber(io.read())
 
-if a < 3 or b < 3 then
-    print("fuck you")
-    return
+for i = 1, i < a, i+1 do
+    digAndMove(1)
 end
-refuel()
