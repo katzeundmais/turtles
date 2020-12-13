@@ -26,19 +26,19 @@ io.write("length: ")
 a = tonumber(io.read())
 io.write("girth: ")
 b = tonumber(io.read())
+local n = 1
 
 refuel()
 turtle.digDown()
 turtle.down()
 while turtle.detect() do
-    while n < a-1 do
-        digAndMove(n)
-        n = n+1
+    for n = 1, a, 1 do
+        digAndMove(1)
     end
     turtle.turnLeft()
-    while n < b-1 do
-        digAndMove(n)
-        n = n+1
+    for n = 1, a, 1 do
+        digAndMove(1)
     end
+    n = 1
     turtle.turnLeft()
 end
