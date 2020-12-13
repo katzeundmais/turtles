@@ -32,13 +32,16 @@ refuel()
 turtle.digDown()
 turtle.down()
 while turtle.detect() do
-    for n = 1, a, 1 do
+    for n = 1, a-1, 1 do
         digAndMove(1)
     end
     turtle.turnLeft()
-    for n = 1, a, 1 do
+    for n = 1, b-2, 1 do
         digAndMove(1)
     end
-    n = 1
-    turtle.turnLeft()
+    if turtle.detect() == false then
+        turtle.turnLeft()
+        a = a-1
+        b = b-2
+    end
 end
