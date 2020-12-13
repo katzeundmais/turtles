@@ -288,10 +288,6 @@ function quarry()
 	turtle.digDown()
 	done = 1
 	empty()
-	term.clear()
-	term.setCursorPos(1,1)
-	print("Thank you for using Gambit's quarry program!")
-	print("---------------------------------------")
 end
 
 quarry()
