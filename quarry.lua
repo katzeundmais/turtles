@@ -33,11 +33,13 @@ turtle.digDown()
 turtle.down()
 while turtle.detect() do
     for n = 1, a-1, 1 do
-        digAndMove(1)
+        turtle.dig()
+        turtle.forward()
     end
     turtle.turnLeft()
     for n = 1, b-2, 1 do
-        digAndMove(1)
+        turtle.dig()
+        turtle.forward()
     end
     if turtle.detect() == false then
         turtle.turnLeft()
