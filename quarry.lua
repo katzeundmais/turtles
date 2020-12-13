@@ -1,35 +1,41 @@
-io.write("length: ")
-A = tonumber(io.read())
-io.write("girth: ")
-B = tonumber(io.read())
-
-while turtle.digDown() == true do
-
-    for i = 1, I < A, I + 1 do
-        turtle.dig()
-        turtle.forward()
+function refuel()
+    while turtle.getFuelLevel() == 0 do
+        for i = 1, 16 do
+            turtle.select(i)
+            item = turtle.getItemDetail()
+            if item and item.name == "minecraft:coal" then
+                turtle.refuel()  
+            end
+        end
+        turtle.select(1)
+        break
     end
+end
 
-    turtle.turnLeft()
-
-    for i = 1, I < B, I + 1 do
-        turtle.dig()
+function digAndMove(n)
+    for x = 1, n, 1 do
+        while turtle.detect() do
+            turtle.dig()
+        end
         turtle.forward()
+        refuel()
     end
+end
 
-    turtle.turnLeft()
-
-    for i = 1, I < A, I + 1 do
-        turtle.dig()
-        turtle.forward()
+function square(n)
+    while turtle.detect() do
+        digAndMove(n)
     end
-
-    turtle.turnLeft()
-
-    for i = 1, I < B-1, I + 1 do
-        turtle.dig()
-        turtle.forward()
-    end
-
     turtle.turnLeft()
 end
+
+io.write("length: ")
+a = tonumber(io.read())
+io.write("girth: ")
+b = tonumber(io.read())
+
+if a < 3 or b < 3 then
+    print("fuck you")
+    return
+end
+refuel()
