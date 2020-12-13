@@ -27,6 +27,8 @@ a = tonumber(io.read())
 io.write("girth: ")
 b = tonumber(io.read())
 
+turtle.digDown()
+turtle.down()
 for i = 1, a, 1 do
     digAndMove(1)
 end
