@@ -82,6 +82,8 @@ function quarry()
 	turn = 0
 	done = 0
 	depth = tonumber(depth)
+	turtle.digUp()
+	turtle.up()
 	y = y - 1
 	while y < depth - 2 do
 		digDown()
