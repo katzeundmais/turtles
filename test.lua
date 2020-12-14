@@ -101,13 +101,13 @@ function empty()
 	end
 end
 
-function checkFuel()
+function checkFull()
 	fullSlots = 0
 	local search = 0
-	for search = 1, 16, 1 do
+	for search = 16, 1, -1 do
 		turtle.select(search)
 		if turtle.getItemCount() > 0 then
-			if yeet == "yes" then
+			if tossGarbage == "yes" then
 				if turtle.getItemDetail().name == "minecraft:cobblestone" then
 					turtle.drop()
 				elseif turtle.getItemDetail().name == "minecraft:stone" then
