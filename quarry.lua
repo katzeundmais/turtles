@@ -70,7 +70,7 @@ end
 
 function digDown()
 	local step = 0
-	for step = 2, 0, -1 do
+	for step = 1, 0, -1 do
 		turtle.digDown()
 		if turtle.down() == true then
 			y = y + 1
