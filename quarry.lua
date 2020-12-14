@@ -6,7 +6,7 @@ length = io.read()
 io.write("depth: ")
 depth = io.read()
 io.write("yeet? ")
-tossGarbage = io.read()
+yeet = io.read()
 
 x = 0
 y = 0
@@ -82,7 +82,8 @@ function quarry()
 	turn = 0
 	done = 0
 	depth = tonumber(depth)
-	while y < depth - 1 do
+	y = y - 1
+	while y < depth - 2 do
 		digDown()
 		for c = length, 1, -1 do
 			for r = girth, 2, -1 do
@@ -99,7 +100,7 @@ function quarry()
 				if turn == 0 then
 					turn = 2
 				elseif turn == 1 then
-					turn = 2
+					turn = 3
 				elseif turn == 2 then
 					turn = 0
 				elseif turn == 3 then
