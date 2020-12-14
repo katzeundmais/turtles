@@ -68,10 +68,12 @@ end
 
 function checkFuel()
 	while turtle.getFuelLevel() == 0 do
-		for i = 1, 16, 1 do
+		for i = 16, 1, -1 do
 			turtle.select(1)
-			if turtle.getItemDetail().name == "minecraft:coal" then
-				turtle.refuel()
+			if turtle.getItemCount() == 0 then
+				if turtle.getItemDetail().name == "minecraft:coal" then
+					turtle.refuel()
+				end
 			end
 		end
 		if turtle.getFuelLevel() == 0 then
