@@ -69,7 +69,7 @@ end
 function checkFuel()
 	turtle.select(1)
 	turtle.refuel()
-	if turtle.getFuelLevel() <= posX + posY + posZ + 1 then
+	if turtle.getFuelLevel() <= x + y + z + 1 then
 		refill = 1
 		empty()
 		refill = 0
@@ -93,6 +93,8 @@ function empty()
 			elseif turtle.suck() == false then
 				turtle.select(1)
 				turtle.refuel()
+				term.clear()
+				term.setCursorPos(1,1)
 				io.write("out of fuel")
 			end
 		end
@@ -236,6 +238,8 @@ function quarry()
 	turtle.digDown()
 	done = 1
 	empty()
+	turtle.turnLeft()
+	turtle.turnLeft()
 end
 
 quarry()
