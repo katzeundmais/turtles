@@ -67,23 +67,12 @@ function resume()
 end
 
 function checkFuel()
-	local search = 0
-	while turtle.getFuelLevel() == 0 do
-		for i = 16, 1, -1 do
-			turtle.select(search)
-			if turtle.getItemCount() > 0 then
-				if turtle.getItemDetail().name == "minecraft:coal" then
-					turtle.refuel()
-				end
-			end
-		end
-		if turtle.getFuelLevel() == 0 then
-			io.write("out of fuel")
-			dead = io.read()
-		end
-	end
-	if dead == "out of fuel" then
-		goHome()
+	turtle.select(1)
+	turtle.refuel()
+	if turtle.getFuelLevel() <= posX + posY + posZ + 1 then
+		refill = 1
+		empty()
+		refill = 0
 	end
 end
 
