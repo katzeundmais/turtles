@@ -36,7 +36,7 @@ function goHome()
 	for step = x - 1, 0, -1 do
 		turtle.forward()
 	end
-	turtle.turnleft()
+	turtle.turnLeft()
 	for step = z - 1, 0, -1 do
 		turtle.forward()
 	end
