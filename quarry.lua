@@ -30,6 +30,7 @@ end
 function digStraight()
 	turtle.digDown()
 	turtle.dig()
+	turtle.dig()
 	turtle.forward()
 	if rotation == 0 then
 		z = z + 1
@@ -57,7 +58,7 @@ function nextRow()
 		digStraight()
 		turtle.turnLeft()
 		rotation = 0
-		turn = 0
+		turn = 0 
 	elseif turn == 2 then
 		turtle.turnRight()
 		rotation = 3
@@ -65,12 +66,19 @@ function nextRow()
 		turtle.turnRight()
 		rotation = 0
 		turn = 3
+	elseif turn == 3 then
+		turtle.turnLeft()
+		rotation = 3
+		digStraight()
+		turtle.turnLeft()
+		rotation = 2
+		turn = 2
 	end
 end
 
 function digDown()
 	local step = 0
-	for step = 1, 0, -1 do
+	for step = 2, 0, -1 do
 		turtle.digDown()
 		if turtle.down() == true then
 			y = y + 1
